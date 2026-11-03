@@ -188,7 +188,7 @@ export default function Home() {
       <details className="mobile-nav"><summary aria-label="메뉴 열기">MENU <span>☰</span></summary><div><a href="#projects">WORK</a><a href="#approach">APPROACH</a><a href="#experience">EXPERIENCE</a><a href="#contact">CONTACT</a><a href="https://github.com/three-co1ors" target="_blank" rel="noopener noreferrer">GITHUB ↗</a></div></details>
     </nav>
 
-    <section className="hero">
+    <section className="hero hero-dark">
       <div className="wrap hero-wrap">
         <div className="hero-eyebrow"><span className="eyebrow-line" /><span>ENGINEERING PORTFOLIO</span><span className="hero-counter">[ 01 / 05 ]</span></div>
         <div className="hero-main"><div className="hero-type"><div className="hero-deco">PARK SEONGHA / PERSONAL PORTFOLIO</div><h1 className="hero-name">박성하<span>.</span></h1><div className="hero-summary"><span>SERVER / BACKEND DEVELOPER</span><p>할 수 없는 이유보다<br />해낼 수 있는 방법을 먼저 찾습니다.</p><a href="#projects" className="round-cta" aria-label="프로젝트 보러 가기"><Arrow diagonal /></a></div></div></div>
@@ -198,7 +198,7 @@ export default function Home() {
 
     <section className="intro-dark"><div className="wrap intro-grid"><div><p className="eyebrow dark-eyebrow">WHO I AM <span>— 001</span></p><h2>하고 싶은 일이 생기면<br /><span>일단 하자!</span></h2><p className="intro-desc">머리 아픈 문제를 오래 붙잡고 고민하는 시간을 좋아합니다. 낯선 길 앞에서도 해낼 방법을 찾고, 떠오른 아이디어를 직접 동작하는 결과물로 완성합니다. 새로운 도전을 즐기는 개발자 박성하입니다.</p><div className="intro-tags"><span>SPRING BOOT</span><span>DATA MODELING</span><span>REST API</span><span>SYSTEM DEBUGGING</span></div></div><SystemsGraphic /></div></section>
 
-    <section className="projects-section" id="projects"><div className="wrap"><div className="section-head"><div><p className="eyebrow">SELECTED WORKS <span>— 002</span></p><h2>PROJECT<span>S.</span></h2></div><p>어떤 기술을 썼는지보다<br />문제를 어떻게 해결했는지</p></div><div className="project-filters" aria-label="프로젝트 필터">{(['ALL', 'BACKEND', 'APP', 'GAME'] as const).map(f => <button type="button" onClick={() => setActiveFilter(f)} key={f} className={f === activeFilter ? 'selected' : ''} aria-pressed={f === activeFilter}>{f}<span>{f === 'ALL' ? '04' : f === 'GAME' ? '02' : '01'}</span></button>)}</div>
+    <section className="projects-section" id="projects"><div className="wrap"><div className="section-head"><div><p className="eyebrow">SELECTED WORKS <span>— 002</span></p><h2>PROJECTS<span>.</span></h2></div><p>어떤 기술을 썼는지보다<br />문제를 어떻게 해결했는지</p></div><div className="project-filters" aria-label="프로젝트 필터">{(['ALL', 'BACKEND', 'APP', 'GAME'] as const).map(f => <button type="button" onClick={() => setActiveFilter(f)} key={f} className={f === activeFilter ? 'selected' : ''} aria-pressed={f === activeFilter}>{f}<span>{f === 'ALL' ? '04' : f === 'GAME' ? '02' : '01'}</span></button>)}</div>
       <div className="project-list">{visibleProjects.map(p => <article key={p.number} className="project-card"><div className="project-topline"><span>PROJECT / {p.number}</span><span>{p.tag}</span><span>2025 — 2026</span></div><div className="project-layout"><div className="project-copy"><h3>{p.title}<span>.</span></h3><p className="project-subtitle">{p.subtitle}</p><p className="project-description">{p.description}</p><div className="project-stack">{p.stack.map(tag => <span key={tag}>{tag}</span>)}</div><div className="project-links"><a href={p.github} target="_blank" rel="noopener noreferrer">VIEW SOURCE <Arrow diagonal /></a></div></div><ProjectVisual kind={p.kind} /></div>{p.kind === 'hivibe' && <div className="brand-story"><span className="brand-story-label">NAMING STORY / WHY HIVIBE?</span><p><strong>High your Vibe</strong> — AI 시대에 더 높은 완성도의 바이브 코딩을 지향한다는 뜻과, 학습자의 곁에서 힘을 북돋아 주는 <strong>Hi-Five</strong> 같은 코딩 메이트가 되겠다는 마음을 이름에 담았습니다.</p></div>}{p.kind === 'hivibe' && <div className="offline-note"><span>DEMO STATUS</span><p>HiVibe 실서비스 시연은 현재 중단되어 있습니다. 구현 코드와 기술 설명은 GitHub에서 확인할 수 있습니다. 실제 서비스 화면은 오른쪽 갤러리에서 확인할 수 있습니다.</p></div>}<div className="project-insight"><div className="insight-label">PROBLEM → SOLUTION</div><div><span className="mini-label">01 / CHALLENGE</span><p>{p.problem}</p></div><div><span className="mini-label">02 / APPROACH</span><p>{p.solution}</p></div></div><div className="project-results"><span>IMPLEMENTED</span><ul>{p.results.map(x => <li key={x}>{x}</li>)}</ul></div></article>)}</div>
     </div></section>
 
@@ -207,5 +207,65 @@ export default function Home() {
     <section className="experience-section" id="experience"><div className="wrap"><div className="section-head"><div><p className="eyebrow">BACKGROUND <span>— 004</span></p><h2>BEYOND<br />THE CODE<span>.</span></h2></div><p><br />다양한 경험들</p></div><div className="experience-content"><div className="timeline"><div className="timeline-row"><span>EDUCATION</span><div><h3>Sookmyung Women's University</h3><p>컴퓨터과학 전공 · 2027년 2월 졸업 예정</p></div><b>2027.02</b></div><div className="timeline-row"><span>SECURITY</span><div><h3>SISS</h3><p>Linux · 웹/시스템 해킹 · 리버싱 기초 학습 · 시스템 학술부장/운영진 · CTF 문제 출제 2회</p></div><b>2 YEARS</b></div><div className="timeline-row"><span>COLLABORATION</span><div><h3>두을장학재단 · SOLUX</h3><p>두을장학재단 장학생 및 부기장 활동 · 팀 프로젝트에서 문서화와 시스템 통합 경험</p></div><b>CO-OP</b></div><div className="timeline-row"><span>FOUNDATION</span><div><h3>Computer Science</h3><p>운영체제 · 자료구조 · 네트워크 · 데이터베이스 · 시스템 프로그래밍</p></div><b>CORE CS</b></div></div><aside className="skills-box"><p className="skills-eyebrow">CURRENT TOOLKIT</p><h3>TOOLS &<br />TECH STACK.</h3><div className="skill-group"><span>BACKEND & DATA</span><p>Java · Spring Boot · MySQL · REST API · Firebase</p></div><div className="skill-group"><span>INFRA & SYSTEM</span><p>Docker · AWS EC2 / RDS · Nginx · Linux · Git</p></div><div className="skill-group"><span>APPLICATION & GAME</span><p>Kotlin · Jetpack Compose · C# · Unity · Python</p></div><p className="skills-note">ADsP 취득 · 프로젝트에서 실제 사용한 기술을 중심으로 정리했습니다.</p></aside></div></div></section>
 
     <section className="contact-section" id="contact"><div className="wrap"><p className="eyebrow">LET'S CONNECT <span>— 005</span></p><div className="contact-layout"><h2>BUILD WHAT<br /><em>COMES NEXT.</em></h2><div><p>끊임없이 배우고, 고민하는<br />개발자가 되겠습니다.</p><a className="contact-button" href="https://github.com/three-co1ors" target="_blank" rel="noopener noreferrer">EXPLORE MY GITHUB <Arrow diagonal /></a></div></div><div className="footer"><span>© 2026 PARK SEONGHA</span><span>BACKEND · SYSTEMS ENGINEERING</span><a href="#top">BACK TO TOP ↑</a></div></div></section>
+
+
+    <style jsx global>{`
+      /* === HERO COLOR REFRESH === */
+      .hero.hero-dark {
+        background: #080808 !important;
+        color: #ffffff !important;
+      }
+
+      .hero.hero-dark .hero-wrap,
+      .hero.hero-dark .hero-main,
+      .hero.hero-dark .hero-type {
+        background: transparent !important;
+      }
+
+      .hero.hero-dark .hero-name {
+        color: #ffffff !important;
+      }
+
+      .hero.hero-dark .hero-name span {
+        color: #ed352e !important;
+      }
+
+      .hero.hero-dark .hero-eyebrow,
+      .hero.hero-dark .hero-deco,
+      .hero.hero-dark .hero-bottom,
+      .hero.hero-dark .hero-summary > span {
+        color: #c8c8c8 !important;
+      }
+
+      .hero.hero-dark .hero-summary p {
+        color: #ffffff !important;
+      }
+
+      .hero.hero-dark .eyebrow-line {
+        background: #ed352e !important;
+      }
+
+      .hero.hero-dark .round-cta {
+        border-color: rgba(255,255,255,.85) !important;
+        color: #ffffff !important;
+        background: transparent !important;
+      }
+
+      .hero.hero-dark .round-cta:hover {
+        background: #ed352e !important;
+        border-color: #ed352e !important;
+        color: #ffffff !important;
+      }
+
+      /* PROJECTS. : text black, only period red */
+      .projects-section .section-head h2 {
+        color: #111111 !important;
+      }
+
+      .projects-section .section-head h2 span {
+        color: #ed352e !important;
+      }
+    `}</style>
+
   </main>;
 }
