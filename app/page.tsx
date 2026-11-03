@@ -517,14 +517,27 @@ export default function Home() {
           <a href="#experience">EXPERIENCE</a>
           <a href="#contact">CONTACT</a>
         </div>
-        <a
-          className="nav-git"
-          href="https://github.com/three-co1ors"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GITHUB <Arrow diagonal />
-        </a>
+
+        <div className="nav-external">
+          <a
+            className="nav-git"
+            href="https://sh-main-portfoli0.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            PORTFOLIO <Arrow diagonal />
+          </a>
+
+          <a
+            className="nav-git"
+            href="https://github.com/three-co1ors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GITHUB <Arrow diagonal />
+          </a>
+        </div>
+
         <details className="mobile-nav">
           <summary aria-label="메뉴 열기">
             MENU <span>☰</span>
